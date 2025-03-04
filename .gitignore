@@ -1,0 +1,19 @@
+# Virtual Environment
+venv/
+*.venv
+.env
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# IDE files
+.vscode/
+.idea/
+
+# Data files (optional, depends on your project)
+*.csv
+*.xlsx
+
+# Logs
+*.log
