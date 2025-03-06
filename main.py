@@ -1,33 +1,56 @@
 import streamlit as st
-import pathlib
-# from src.pages import overview, visualization, prediction
 
 def main():
-    st.set_page_config(page_title="Intelligent System Project", page_icon=":robot_face:")
+    """
+    Main Streamlit application entry point
+    Configures the overall application layout
+    """
+    # Set page configuration for the entire application
+    st.set_page_config(
+        page_title="Intelligent System Project", 
+        page_icon=":robot_face:",
+        layout="wide",
+        initial_sidebar_state="expanded"
+    )
 
-    sidebar()
-
+    # Main application header
     st.title("Intelligent System Project")
-    st.write("Navigate through the pages to explore different ML models and explanations.")
+    st.write("Exploring Machine Learning and Neural Networks")
 
-def sidebar() -> None:
-    st.sidebar.title("Pages")
+    # Main page content
+    st.markdown("""
+    ## Welcome to the Intelligent System Project
 
-    # Section 1
-    st.sidebar.subheader("1. Machine Learning")
-    st.sidebar.link_button(label="Explaination", url="https://openai.com", type="tertiary")
-    st.sidebar.link_button(label="Model", url="#credit-card", type="tertiary")
+    This interactive dashboard provides insights into:
+    - Machine Learning Concepts
+    - Neural Network Architectures
+    - Model Demonstrations
+    """)
+
+    # Feature highlights
+    col1, col2 = st.columns(2)
     
-    st.sidebar
-    # Section 2
-    st.sidebar.subheader("2. Neural Networks")
-    st.sidebar.link_button("Explaination", "https://openai.com", type="primary", use_container_width=1)
-    st.sidebar.link_button("Model", "https://openai.com", type="primary", use_container_width=1)
-    st.sidebar.markdown("[Credit Card](#credit-card)")
-    st.sidebar.markdown("[PayPal](#paypal)")
+    with col1:
+        st.subheader("Machine Learning")
+        st.write("""
+        - Supervised and Unsupervised Learning
+        - Classification and Regression Models
+        - Interactive Demonstrations
+        """)
+    
+    with col2:
+        st.subheader("Neural Networks")
+        st.write("""
+        - Deep Learning Principles
+        - Network Architectures
+        - Training Visualizations
+        """)
 
-    st.sidebar.markdown(" ---------------------- ")
-
+def run():
+    """
+    Wrapper function to run the Streamlit application
+    """
+    main()
 
 if __name__ == "__main__":
-    main()
+    run()

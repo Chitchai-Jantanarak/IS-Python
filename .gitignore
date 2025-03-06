@@ -13,3 +13,7 @@ __pycache__/
 
 # Logs
 *.log
+
+# data train image
+data/neural/chest_xray/
+train/neural_network/pneumonia_model.h5
