@@ -78,7 +78,6 @@ def preprocess_image(train_x, test_x, val_x) -> tuple:
     )
 
     def normalize(image, label):
-        """Simplified normalization without augmentation"""
         image = tf.cast(image, tf.float32) / 255.0
         return image, label
 
@@ -155,7 +154,7 @@ def training(train_data, val_data, model):
     )
 
 def main():
-    base_path = '../../data/neural/chest_xray'
+    base_path = '../../data/neural_network/chest_xray'
 
     try:
         train_x, test_x, val_x = load_image(base_path)

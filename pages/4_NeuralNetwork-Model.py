@@ -134,7 +134,7 @@ def main():
     2. Click 'Analyze Image'
     3. View the results and probability scores
     
-    **Important:** This tool is for demonstration purposes only and should not be used for medical diagnosis.
+    **Important:** This tool is for demonstration purposes only!!!
     """)
 
 if __name__ == "__main__":
