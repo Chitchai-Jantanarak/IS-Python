@@ -1,13 +1,7 @@
 import streamlit as st
 
-st.set_page_config(page_title="Neural Networks Explanation", page_icon="🫁")
-
-st.title(":red[Neural Networks]")
-
-st.markdown("""---""")
-
-
 def preparation() -> None :
+    st.markdown("<a id='dataset-preparation'></a>", unsafe_allow_html=True)
     st.markdown("""
     ## Dataset Preparation
 
@@ -83,6 +77,7 @@ def preparation() -> None :
     st.markdown("---")
 
 def workflow() -> None :
+    st.markdown("<a id='workflow'></a>", unsafe_allow_html=True)
     st.markdown("""
     ## WORKFLOW
                 
@@ -298,11 +293,12 @@ def workflow() -> None :
 
 
     st.markdown("""
-    ###### สามารถดูลำดับขั้นตอนการทำทั้งหมดได้ [ที่นี่](https://github.com/Chitchai-Jantanarak/IS-Streamlit/tree/main/train/neural_network)
+    ###### สามารถดูลำดับขั้นตอนการทำทั้งหมดได้ [ที่นี่](https://github.com/Chitchai-Jantanarak/IS-Streamlit/blob/main/train/neural_network/__builder_model.py)
     ---
     """)
 
 def conclusion() -> None :
+    st.markdown("<a id='conclusion'></a>", unsafe_allow_html=True)
     st.markdown("""
     ## Conclusion
                 
@@ -345,27 +341,20 @@ def conclusion() -> None :
     """)
     st.image("public/neural_network/conclusion_roc_curve.png")
 
-                    
-    
+def main():
+    st.set_page_config(page_title="Neural Networks Explanation", page_icon="🫁")
 
-preparation()
-workflow()
-conclusion()
+    st.title(":red[Neural Networks]")
+    st.markdown("---")
 
-# Interactive element
-st.sidebar.header("Neural Network Quiz")
-quiz_question = st.sidebar.selectbox(
-    "What is the primary function of a hidden layer?",
-    [
-        "Select an answer",
-        "To receive initial data",
-        "To produce final predictions",
-        "To process and transform data",
-        "To store network weights"
-    ]
-)
+    preparation()
+    workflow()
+    conclusion()
 
-if quiz_question == "To process and transform data":
-    st.sidebar.success("Correct! 🎉")
-elif quiz_question != "Select an answer":
-    st.sidebar.error("Not quite right. Try again!")
+    # Footer or additional content
+    col1, col2, col3 = st.columns(3)
+    if col3.button('Go to Model Page', use_container_width=1, type='primary'):
+        st.switch_page("pages/4_NeuralNetwork-Model.py")
+
+if __name__ == "__main__" :
+    main()
