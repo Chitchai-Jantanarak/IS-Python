@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def data_cleasing() -> pd:
+def data_cleansing() -> pd:
 
     def processing(df) -> pd:
         df = df.drop( columns = ["Comments"] ) # Drop Unnecessary Attr.

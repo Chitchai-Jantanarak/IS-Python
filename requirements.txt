@@ -6,3 +6,5 @@ matplotlib
 seaborn
 tensorflow
 keras-visualizer
+ydata_profiling
+IPython

@@ -7,12 +7,12 @@ from sklearn.svm import SVC
 
 import sys
 sys.path.append('..')
-from EDA import data_cleasing
+from EDA import data_cleansing
 
 
 def build_svm_model():
     # Load and prepare data
-    df = data_cleasing()
+    df = data_cleansing()
     
     data_prep = df[['Body Mass (g)', 'Delta 15 N (o/oo)', 'Delta 13 C (o/oo)', 
                    'Culmen Length (mm)', 'Culmen Depth (mm)', 'Flipper Length (mm)', 

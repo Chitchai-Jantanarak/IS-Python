@@ -14,6 +14,8 @@ setup(
         'seaborn==0.12.2',
         'tensorflow==2.15.0',
         'keras-visualizer==2.4',
-        'plotly==5.18.0'
+        'plotly==5.18.0',
+        'ydata_profiling',
+        'IPython'
     ],
 )

@@ -1,18 +1,19 @@
 import pandas as pd
 import joblib
 
-from sklearn.compose import ColumnTransformer, OneHotEncoder, StandardScaler
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
 
 import sys
 sys.path.append('..')
-from EDA import data_cleasing
+from EDA import data_cleansing
 
 def build_rf_model():
     # Load and prepare data
-    df = data_cleasing()
+    df = data_cleansing()
 
     categorical_feat = ['Species', 'Sex', 'Island', 'Clutch Completion']
     numerical_feat   = ['Delta 15 N (o/oo)', 'Delta 13 C (o/oo)', 'Culmen Length (mm)', 
@@ -53,6 +54,6 @@ def build_rf_model():
 
     # Save
     joblib.dump(rf_pipeline, 'rf_model.pkl')
-    joblib.dump(feat_datas)
+    joblib.dump(feat_datas, 'feature_data.pkl')
 
     return rf_pipeline, X_train, X_test, y_train, y_test, X, y

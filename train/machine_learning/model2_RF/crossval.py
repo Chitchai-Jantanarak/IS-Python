@@ -17,8 +17,12 @@ def evaluate_model(model=None, X_test=None, X_train=None, y_test=None,  y_train=
         y_test is None or 
         y_train is None
     ):
-        model = joblib.load('svm_model.pkl')
-        _, X_train, X_test, y_train, y_test, _, _ = build_rf_model()
+        try:
+            model = joblib.load('svm_model.pkl')
+            _, X_train, X_test, y_train, y_test, _, _ = build_rf_model()
+        except FileNotFoundError:
+            model, X_train, X_test, y_train, y_test, _, _ = build_rf_model()
+
 
     cv_scores = cross_val_score(
         model, X_train, y_train, 
